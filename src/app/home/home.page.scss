@@ -1,0 +1,96 @@
+.no-style-header {
+  --background: none;
+  --ion-background-color: none;
+  --ion-toolbar-background: none;
+  --border-color: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0; 
+}
+
+ion-toolbar {
+  --background: none; 
+  --ion-toolbar-background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+ion-title {
+  display: flex;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.logo-container{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+
+  img {
+    width: 200px; 
+    height: auto;
+  }
+}
+
+
+
+
+
+.login-page {
+  --background: #121212; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  max-width: 600px;
+
+  ion-item {
+    --background: none;
+    --border-width: 1px;
+    --border-color: #3c3c3c;
+    --border-radius: 10px;
+    margin: 10px 20px 20px 20px;
+
+    ion-input {
+      color: #fff;
+      --placeholder-color: #aaaaaa;
+    }
+  }
+}
+
+.login-button {
+  --background: #3797ef; 
+  color: white;
+  font-weight: bold;
+  margin: 20px 20px 0 20px ;
+  border-radius: 50px;
+}
+
+.hazolbidadopass-button {
+  --color: #3797ef;
+  font-weight: normal;
+}
+
+.register-container {
+  margin-top: 80px;
+  text-align: center;
+
+  p {
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .register-button {
+    --color: #3797ef;
+    font-weight: bold;
+  }
+}
+
+

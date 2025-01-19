@@ -1,0 +1,38 @@
+<ion-menu side="start" menuId="main-menu" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/home">Inicio</ion-item>
+      <ion-item routerLink="/profile">Perfil</ion-item>
+      <ion-item routerLink="/settings">Configuraciones</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">     
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" id="main-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div id="container">
+    <ion-title>Perfil de Usuario</ion-title>
+    <ion-label>Bienvenido {{nombreUsuario}} </ion-label>
+  </div>
+</ion-content>

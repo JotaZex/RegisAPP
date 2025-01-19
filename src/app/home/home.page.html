@@ -1,0 +1,45 @@
+<ion-header class="no-style-header">
+  <ion-toolbar>
+    <ion-title>RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="login-page">
+  <div class="logo-container">
+    <img src="assets/logo.png" alt="Logo" />
+  </div>
+  <ion-list class="login-form">
+    <ion-item lines="none">
+      <ion-input
+        placeholder="Nombre de usuario"
+        type="text"
+        [(ngModel)]="user.username"
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input type="password" [(ngModel)]="user.password" 
+      placeholder="Ingrese su contraseña">
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
+    </ion-item>
+    <ion-button (click)="validar()" expand="block" shape="round" class="login-button">
+      Iniciar sesión
+    </ion-button>
+    <div style="color: rgb(184, 21, 21); text-align: center; margin-top: 10px;" > 
+    <ion-label>{{errormsj}}</ion-label>
+  </div>
+    <ion-button text-align="center"
+      fill="clear"
+      class="hazolbidadopass-button" 
+      >¿Haz olvidado tu contraseña?</ion-button>
+  </ion-list>
+  <div class="register-container">
+    <p>¿No tienes una cuenta?</p>
+    <ion-button
+      [routerLink]="['/register']"
+      fill="clear"
+      class="register-button"
+      >Crear cuenta nueva</ion-button
+    >
+  </div>
+</ion-content>
