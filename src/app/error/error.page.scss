@@ -1,0 +1,22 @@
+
+background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: image('assets/background.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+
+ion-button{
+    margin: 5% 5% 5% 5%;
+}
+ion-icon{
+    margin: auto;
+    margin-top:10%;
+    width:100px;
+    height: 100px;
+}

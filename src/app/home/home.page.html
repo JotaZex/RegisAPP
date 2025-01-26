@@ -13,7 +13,7 @@
       <ion-input
         placeholder="Nombre de usuario"
         type="text"
-        [(ngModel)]="user.username"
+        [(ngModel)]="user.usuario"
       ></ion-input>
     </ion-item>
     <ion-item lines="none">
@@ -22,7 +22,7 @@
       <ion-input-password-toggle slot="end"></ion-input-password-toggle>
     </ion-input>
     </ion-item>
-    <ion-button (click)="validar()" expand="block" shape="round" class="login-button">
+    <ion-button (click)="conectar()" expand="block" shape="round" class="login-button">
       Iniciar sesión
     </ion-button>
     <div style="color: rgb(184, 21, 21); text-align: center; margin-top: 10px;" > 

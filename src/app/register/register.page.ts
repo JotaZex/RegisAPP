@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { AuthService } from '../Servicios/auth.service';
+
 
 @Component({
   selector: 'app-register',
@@ -7,24 +10,50 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./register.page.scss'],
   standalone: false,
 })
-export class RegisterPage implements OnInit{
-  constructor(private router: Router) { }
-  user = {
-    email:'',
-    username:'',
-    password:'',
-  };
+export class RegisterPage implements OnInit {
+  constructor(
+    private toast: ToastController,
+    private router: Router,
+    private auth: AuthService
+  ) {}
 
-  errormsj='';
+  user = {
+    usuario: '',
+    correo: '',
+    password: 'pass1234',
+  };
   ngOnInit() {}
 
-  
-  register(){
-    if(this.user.username.length > 0 && this.user.password.length > 0 && this.user.email.length > 0){
-      this.router.navigate(['/home']);
-      console.log(this.user);
-    }else{
-      this.errormsj = 'Las casillas no pueden estar vacias'
+  registrar() {
+    if (
+      this.user.usuario.trim().length > 0 ||
+      this.user.password.trim().length > 0 ||
+      this.user.correo.trim().length > 0
+    ) {
+      this.auth
+        .registerAPI(this.user.usuario, this.user.correo, this.user.password)
+        .then((res) => {
+          if (res) {
+            this.generarToast('Registro Exitoso \n Redireccionando');
+            setTimeout(() => {
+              this.router.navigate(['/home']);
+            }, 1500);
+          } else {
+            this.generarToast('Credenciales ya existen');
+          }
+        });
+    } else {
+      this.generarToast('Los campos no pueden estar vacios');
     }
+  }
+  generarToast(mensaje: string) {
+    const toast = this.toast.create({
+      message: mensaje,
+      duration: 3000,
+      position: 'bottom',
+    });
+    toast.then((res) => {
+      res.present();
+    });
   }
 }

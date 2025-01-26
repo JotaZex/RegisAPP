@@ -18,7 +18,7 @@
         type="text"
         label="Usuario"
         labelPlacement="floating"
-        [(ngModel)]="user.username"
+        [(ngModel)]="user.usuario"
       ></ion-input>
     </ion-item>
     <ion-item lines="none">
@@ -27,7 +27,7 @@
         type="email"
         label="Correo"
         labelPlacement="floating"
-        [(ngModel)]="user.email"
+        [(ngModel)]="user.correo"
       ></ion-input>
     </ion-item>
     <ion-item lines="none">
@@ -41,16 +41,12 @@
       </ion-input>
     </ion-item>
     <ion-button
-      (click)="register()"
+      (click)="registrar()"
       expand="block"
       shape="round"
-      class="register-button"
-    >
+      class="register-button">
       Registrarse
     </ion-button>
-    <div style="color: rgb(184, 21, 21); text-align: center; margin-top: 10px;" > 
-      <ion-label>{{errormsj}}</ion-label>
-    </div>
   </ion-list>
 </ion-content>
 
