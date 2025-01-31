@@ -22,17 +22,22 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
-  {
-    path: 'error',
-    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
-  },
+ 
   {
     path: 'perfil',
     loadChildren: () =>
       import('./perfil/perfil.module').then((m) => m.PerfilPageModule),
     canActivate: [authGuard],
   },
-
+{
+  path: 'error',
+  loadChildren: () =>
+    import('./error/error.module').then((m) => m.ErrorPageModule),
+},
+{
+  path: '**',
+  redirectTo: 'error',
+},
   
   
 

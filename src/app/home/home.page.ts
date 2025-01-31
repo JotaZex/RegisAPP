@@ -39,11 +39,11 @@ export class HomePage {
                           this.errormsj = '';
                         }, 3000);
                       } else {
-                        this.errormsj = 'Credenciales erroneas';
+                        this.errormsj = 'Contraseña o usuario incorrectos';
                       }
                     });
                   } else {
-                    this.errormsj = 'Credenciales no pueden estar vacias';
+                    this.errormsj = 'Los espacios no pueden estar vacios';
                   }
                 }
     

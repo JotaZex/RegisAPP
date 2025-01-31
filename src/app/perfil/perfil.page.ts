@@ -22,8 +22,10 @@ export class PerfilPage implements OnInit {
   nombreUsuario = '';
   ngOnInit() {}
   ngAfterContentInit() {
-    this.user = history.state.user;
-    this.nombreUsuario = this.user.usuario;
+    if (history.state?.user) {
+      this.user = history.state.user;
+      this.nombreUsuario = this.user.usuario;
+    }
   }
 
   logout() {

@@ -39,11 +39,11 @@ export class RegisterPage implements OnInit {
               this.router.navigate(['/home']);
             }, 1500);
           } else {
-            this.generarToast('Credenciales ya existen');
+            this.generarToast('usuario o correo ya existen');
           }
         });
     } else {
-      this.generarToast('Los campos no pueden estar vacios');
+      this.generarToast('Los espacios no pueden estar vacios');
     }
   }
   generarToast(mensaje: string) {
