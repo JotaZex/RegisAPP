@@ -1,25 +1,28 @@
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../Servicios/auth.service';
 import { ToastController } from '@ionic/angular';
+import { inject } from '@angular/core';
 
-export const authGuard: CanActivateFn = (route, state) => {
-  const auth: AuthService = new AuthService();
-  const router: Router = new Router();
-  const toastController: ToastController = new ToastController();
+export const authGuard: CanActivateFn = async (route, state) => {
+  const authService = inject(AuthService);  
+  const toastController = inject(ToastController);  
+  const router = inject(Router);  
 
-  if (auth.isConnected()) {
-    return true;
+  
+  const isLoggedIn = await authService.isConnected();
+  console.log('Usuario logeado:', isLoggedIn); 
+
+  if (isLoggedIn) {
+    return true;  
   } else {
-    router.navigate(['/home']);
+    const toast = await toastController.create({
+      message: 'Debe estar logeado para acceder.',
+      duration: 2000,  
+      position: 'bottom'
+    });
+    toast.present();
 
-    const toast = toastController.create({
-      message: 'Debe autentificarse para acceder',
-      duration: 3000,
-      position: 'bottom',
-    });
-    toast.then((res) => {
-      res.present();
-    });
-    return false;
+    router.navigate(['/home']);
+    return false;  
   }
 };

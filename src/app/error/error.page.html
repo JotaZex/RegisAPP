@@ -1,16 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>error</ion-title>
+    <ion-title>Error</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="background-image"></div>
-  <div class="content">
-    <h1>Oops!</h1>
-    <p>Algo salió mal. Por favor, inténtalo nuevamente.</p>
+  <div class="background-container">
+    <img src="/assets/background.jpg" alt="Background Image" class="background-image">
+    <div class="overlay-content">
+      <h1>Oops!</h1>
+      <p>Algo salió mal. Por favor, inténtalo nuevamente.</p>
       <ion-button [routerLink]="['/home']" expand="block" shape="round" class="login-button">
-      Volver a inicio
-    </ion-button>
+        Volver a inicio
+      </ion-button>
+    </div>
   </div>
 </ion-content>

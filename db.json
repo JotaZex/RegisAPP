@@ -7,9 +7,21 @@
       "pass": "pass1234"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "admin",
       "correo": "admin@gmail.com",
+      "pass": "admin1234"
+    },
+    {
+      "id": 3,
+      "username": "alonso",
+      "correo": "alonso@gmail.com",
+      "pass": "pass1234"
+    },
+    {
+      "id": 4,
+      "username": "admin1",
+      "correo": "admin1@gmail.com",
       "pass": "admin1234"
     }
   ]

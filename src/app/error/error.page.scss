@@ -1,22 +1,40 @@
-
-background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
+.background-container {
+    position: relative;
     width: 100%;
     height: 100%;
-    background-image: image('assets/background.png');
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
   }
-
-ion-button{
-    margin: 5% 5% 5% 5%;
-}
-ion-icon{
-    margin: auto;
-    margin-top:10%;
-    width:100px;
-    height: 100px;
-}
+  
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  .overlay-content {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: black;
+    z-index: 1;  
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .login-button {
+    background-color: none;
+    color: white;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../Servicios/auth.service';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 
 @Component({
   selector: 'app-perfil',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
   standalone: false,
 })
 export class PerfilPage implements OnInit {
+  scanning: boolean = false;
   constructor(
     private auth: AuthService,
     private router:Router,

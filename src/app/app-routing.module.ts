@@ -15,7 +15,7 @@ const routes: Routes = [
 
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule),
   },
 
   {
@@ -34,6 +34,11 @@ const routes: Routes = [
   loadChildren: () =>
     import('./error/error.module').then((m) => m.ErrorPageModule),
 },
+{
+  path: 'scanner',
+  loadChildren: () => import('./scanner/scanner.module').then( m => m.ScannerPageModule)
+},
+
 {
   path: '**',
   redirectTo: 'error',
